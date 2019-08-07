@@ -1,0 +1,23 @@
+.artcatalog-localation {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+}
+
+.artcatalog {
+    margin: 0;
+    padding-left: 18px;
+    list-style: disc;
+    overflow: auto;
+
+    a {
+        display: block;
+        padding: 2px;
+        text-decoration: none;
+        color: #495060;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
