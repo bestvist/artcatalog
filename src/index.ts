@@ -1,10 +1,19 @@
-import Artcatalog from './core/artcatalog';
+import Artcatalog from './core/index';
 
-(function () {
-    const artcatalog = new Artcatalog({
-        el: '#article',
-        // target: '#nav'
-    })
+const readme = require("../README.md");
+const container = document.getElementById("container");
+container.innerHTML = readme;
 
-    artcatalog.render();
-})()
+// target 
+new Artcatalog({
+    el: '#container',
+    target: '#nav',
+}).render();
+
+// position 
+new Artcatalog({
+    el: '#container',
+    position: {
+        right: '100px'
+    }
+}).render();

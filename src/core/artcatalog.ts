@@ -2,7 +2,7 @@ import '../css/artcatalog.scss';
 import { IOptions } from './artcatalog.i';
 
 export default class Artcatalog {
-    private options: object;
+    private options: IOptions;
     private el: string;
     private target: string;
 
@@ -54,6 +54,14 @@ export default class Artcatalog {
         } else {
             let el = document.createElement('div');
             el.classList.add('artcatalog-localation');
+
+            if (this.options.position) {
+                let style = el.style;
+                Object.assign(style, this.options.position);
+            }
+            let icon = document.createElement('i');
+            icon.classList.add('artcatalog-icon');
+            el.appendChild(icon);
             el.appendChild(node);
             document.body.appendChild(el);
         }
