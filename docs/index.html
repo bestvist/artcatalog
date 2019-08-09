@@ -6,18 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>artcatalog</title>
+    <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+    <style>
+        html,body {
+            margin: 0;
+        }
+        body { 
+            padding: 20px; 
+        }
+        #container { 
+            margin-right: 200px; 
+        }
+        #nav {
+            float: right;
+            width: 200px;
+            border-left: 1px solid #ccc;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="article">
-        <h1>header1</h1>
-        <h2 id="-">header11</h2>
-        <h1 id="-">header2</h1>
-        <h2 id="-">header22</h2>
-        <h1 id="-">header3</h1>
-        <h2 id="-">header33</h2>
-    </div>
     <div id="nav"></div>
+    <div id="container" class="markdown-body"></div>
+
     <!-- built files will be auto injected -->
 <script type="text/javascript" src="artcatalog.min.js"></script></body>
 
