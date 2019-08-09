@@ -1,9 +1,16 @@
+const path = require('path')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const baseConfig = require('./webpack.config.base')
+const pkg = require('../package.json')
 
 module.exports = merge(baseConfig, {
-    mode: 'development',
+    mode: 'production',
+    output: {
+        filename: pkg.name + '.min.js',
+        path: path.resolve(__dirname, '..', 'docs')
+    },
     module: {
         rules: [{
             test: /\.md$/,
@@ -15,20 +22,10 @@ module.exports = merge(baseConfig, {
             }]
         }]
     },
-    devtool: 'inline-source-map',
-    devServer: {
-        clientLogLevel: 'warning',
-        hot: true,
-        contentBase: 'dist',
-        compress: true,
-        open: true,
-        overlay: { warnings: false, errors: true },
-        publicPath: '/',
-        quiet: true
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.html'
-        })
+        }),
+        new CleanWebpackPlugin(),
     ]
 })
