@@ -15,6 +15,7 @@
 | position | 目录的定位     | object |
 
 position options
+
 | 属性   | 说明     | 类型   |
 | ------ | -------- | ------ |
 | top    | 顶部定位 | string |
